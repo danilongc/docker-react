@@ -9,4 +9,6 @@ RUN npm run build
 
 # Second Stage
 FROM nginx
+EXPOSE 80
 COPY --from=0 /app/build /usr/share/nginx/html
+
