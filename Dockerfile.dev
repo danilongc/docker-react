@@ -1,0 +1,10 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+# Essa instrução não é necessaria no profile de dev pq fazemos referencia aos arquivos da aplicação usando volume
+COPY . . 
+
+CMD ["npm", "run", "start"]
